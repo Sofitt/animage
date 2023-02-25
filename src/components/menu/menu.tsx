@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectSetup from "./components/project-setup";
+import ProjectSetup from "./components/project-setup/project-setup";
 
 function menu () {
     return (

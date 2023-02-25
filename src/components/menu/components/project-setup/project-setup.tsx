@@ -1,4 +1,5 @@
-import InputLabel from "../../UI/inputLabel";
+import InputLabel from "../../../UI/inputLabel";
+import FromToBlock from "./components/fromToBlock"
 import React, {useState} from "react";
 interface inputModel {
     title: string,
@@ -36,6 +37,7 @@ export default function projectSetup () {
             {
                 jsxInputs
             }
+            <FromToBlock />
         </fieldset>
     )
 }
