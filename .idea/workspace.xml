@@ -4,44 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="622d61e3-1a94-403c-b4d5-c76161d648ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Inter-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/fonts/Inter-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/from-to-block.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/from-to-block.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/from-to-block.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/project-setup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/project-setup.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/colors.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/fonts.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/index.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/null.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/null.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/null.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/typography.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/typography.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/typography.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/animage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/animage.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/inputLabel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/inputLabel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/components/closure-setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/closure-setup.tsx" afterDir="false" />
+    <list default="true" id="622d61e3-1a94-403c-b4d5-c76161d648ae" name="Changes" comment="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup">
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/menu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/menu.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/menu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/components/project-setup/components/fromToBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/project-setup/components/fromToBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/components/project-setup/project-setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/project-setup/project-setup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/numberMask.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/numberMask.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,8 +89,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677368292094</updated>
-      <workItem from="1677368295135" duration="9952000" />
+      <workItem from="1677368295135" duration="12094000" />
     </task>
+    <task id="LOCAL-00001" summary="Добавил настройку окружения">
+      <created>1677396495840</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677396495840</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup">
+      <created>1677396575579</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677396575579</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,5 +113,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Добавил настройку окружения" />
+    <MESSAGE value="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup" />
   </component>
 </project>

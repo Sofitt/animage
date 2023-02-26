@@ -53,7 +53,7 @@ function DistanceBlock ({dValue}:{dValue:number}) {
     )
 }
 
-const AddBlock = (props: { addBlock: (arg0: number) => void; }):JSX.Element => {
+const AddBlock = (props: { addBlock: (arg0: string) => void; }):JSX.Element => {
     const [isInputShow, showInput] = useState(false)
     const [inputValue, setInputValue] = useState('')
     const updateInputValue = (evt:React.FormEvent) => {
@@ -69,7 +69,7 @@ const AddBlock = (props: { addBlock: (arg0: number) => void; }):JSX.Element => {
             return
         }
         showInput(false)
-        props.addBlock(+inputValue)
+        props.addBlock(inputValue)
     }
     const input = <input className='add-block_input' placeholder='Шаг в процентах (0.01-99.99)' type="text" onKeyDown={add} onInput={updateInputValue} value={inputValue}/>
     const button = <button className='add-block' onClick={() => showInput(true)}>+</button>
@@ -81,11 +81,11 @@ const AddBlock = (props: { addBlock: (arg0: number) => void; }):JSX.Element => {
 const Blocks = (props: { addButton: boolean }):JSX.Element => {
     const list = [0, 100]
     const [blocks, updateBlocks] = useState(list)
-    const handleUpdateBlocks = (block: number) => {
-        if (blocks.indexOf(block) >= 0) {
+    const handleUpdateBlocks = (block: number|string) => {
+        if (isNaN(+block) || blocks.indexOf(+block) >= 0) {
             return
         }
-        block = +(block.toFixed(2))
+        block = +((+block).toFixed(2))
         const newBlocks = [...blocks, block].sort((a,b) => a-b)
         updateBlocks(newBlocks)
     }

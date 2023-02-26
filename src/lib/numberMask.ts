@@ -4,9 +4,9 @@ export const numberMask = (value:string):boolean|string => {
     if (!value) {
         return value
     }
-    if (!regExp.test(value)) {
+    if (!regExp.test(value) || value === '.') {
         return false
     }
     // @ts-ignore
-    return +value.match(regExp)[0]
+    return value?.match(regExp)[0]
 }
