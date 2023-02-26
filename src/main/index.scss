@@ -5,16 +5,13 @@
 body {
   font-family: Inter, sans-serif;
 }
-
 input {
   padding: 2px 6px;
 }
-
 textarea {
   padding: 6px;
   background: var(--white);
 }
-
 .settings-block {
   display: flex;
   flex-flow: column;
@@ -23,16 +20,13 @@ textarea {
   padding: 16px 12px;
   background: var(--grey);
 }
-
 .input-label {
   display: flex;
   flex-flow: column;
   background: var(--grey);
   gap: 8px;
+  & input {
+    height: 20px;
+    background: var(--white);
+  }
 }
-.input-label input {
-  height: 20px;
-  background: var(--white);
-}
-
-/*# sourceMappingURL=index.css.map */

@@ -1,6 +1,8 @@
+import '../../../../assets/styles/project-setup.css'
 import InputLabel from "../../../UI/inputLabel";
 import FromToBlock from "./components/fromToBlock"
 import React, {useState} from "react";
+
 interface inputModel {
     title: string,
     inputName: string
@@ -32,7 +34,7 @@ export default function projectSetup () {
                            handleInput={modifyValue}/>
     })
     return (
-        <fieldset>
+        <fieldset className='project-setup settings-block'>
             <legend>Настройка проекта</legend>
             {
                 jsxInputs

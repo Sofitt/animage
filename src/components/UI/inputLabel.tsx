@@ -19,10 +19,10 @@ export default function inputLabel (props:model) {
         props.handleInput({name: props.name, value})
     }
     return (
-        <label>
-            <h2 className="title">
+        <label className='input-label'>
+            <h3 className="title">
                 {props.title}
-            </h2>
+            </h3>
             <input type="text" onInput={handleChange}/>
         </label>
     )

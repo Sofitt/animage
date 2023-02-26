@@ -1,0 +1,27 @@
+.closure-setup .dropdown {
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+.closure-setup .dropdown .header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  min-width: 100px;
+  gap: 6px;
+  user-select: none;
+}
+.closure-setup .dropdown .header .icon {
+  position: relative;
+  height: 16px;
+}
+.closure-setup .dropdown .header .icon.active {
+  rotate: 180deg;
+}
+.closure-setup .dropdown textarea {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+/*# sourceMappingURL=closure-setup.css.map */
