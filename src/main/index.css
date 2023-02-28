@@ -15,6 +15,15 @@ textarea {
   background: var(--white);
 }
 
+.App {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  gap: 34px;
+  width: 100%;
+  background: var(--white);
+}
+
 .settings-block {
   display: flex;
   flex-flow: column;

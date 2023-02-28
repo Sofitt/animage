@@ -4,15 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="622d61e3-1a94-403c-b4d5-c76161d648ae" name="Changes" comment="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/menu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/menu.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/menu.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="622d61e3-1a94-403c-b4d5-c76161d648ae" name="Changes" comment="Исправил маску шага&#10;Добавил стили для menu.tsx">
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/workspace.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/workspace.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/workspace.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/workspace/workspace.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/stringToJSX.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/storage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/components/closure-setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/closure-setup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/components/project-setup/components/fromToBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/project-setup/components/fromToBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/numberMask.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/numberMask.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/components/project-setup/project-setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/project-setup/project-setup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +32,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+        <option value="TypeScript File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -41,24 +52,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Projects\\My\\animage\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\My\\animage\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\My\animage\src\main" />
@@ -89,7 +100,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677368292094</updated>
-      <workItem from="1677368295135" duration="12094000" />
+      <workItem from="1677368295135" duration="25353000" />
+      <workItem from="1677528155852" duration="19118000" />
     </task>
     <task id="LOCAL-00001" summary="Добавил настройку окружения">
       <created>1677396495840</created>
@@ -105,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677396575579</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Исправил маску шага&#10;Добавил стили для menu.tsx">
+      <created>1677398590753</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677398590753</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +134,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Добавил настройку окружения" />
     <MESSAGE value="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup" />
+    <MESSAGE value="Исправил маску шага&#10;Добавил стили для menu.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил маску шага&#10;Добавил стили для menu.tsx" />
   </component>
 </project>

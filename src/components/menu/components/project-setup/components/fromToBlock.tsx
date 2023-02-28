@@ -2,6 +2,7 @@ import React, {Dispatch, useState} from "react";
 import {styleParser} from "../../../../../lib/styleParser";
 import {numberMask} from "../../../../../lib/numberMask";
 import '../../../../../assets/styles/from-to-block.css'
+import storage from "../../../../../main/storage";
 
 interface mode {
     mode: string
@@ -12,7 +13,7 @@ const mods:Array<mode> = [
     {mode: 'value'}
 ]
 
-function DistanceBlock ({dValue}:{dValue:number}) {
+function DistanceBlock ({dValue, changeOptions}:{dValue:number, changeOptions: (options:object, dValue:number) => void}, ) {
     const [options, setOptions]:[object|any, Dispatch<object>] = useState({})
     const [editMode, setEdit]:[boolean, Dispatch<boolean>] = useState(false)
     const composedOptions = (transformDisplay?: boolean | undefined) => {
@@ -32,23 +33,28 @@ function DistanceBlock ({dValue}:{dValue:number}) {
         const result = styleParser(input)
         if (!result) return
         setOptions(result as object)
+        changeOptions(result as object, dValue)
+        console.log('options', result);
     }
-    const updateEdit = () => {
+    const toggleEdit = () => {
         setEdit(!editMode)
     }
-    const content = editMode
-        ? <>
-            <p onClick={updateEdit}>
-                {dValue}:
-            </p>
-            <textarea onInput={(evt) => updateOptions(evt)} defaultValue={composedOptions()}></textarea>
-        </>
-        : <p onClick={updateEdit}>
-            {`${dValue}: `}{`[ ${composedOptions(true)} ]`}
-        </p>
     return (
         <div className='distance-block'>
-            { content }
+            { editMode
+                ? (
+                    <>
+                        <p onClick={toggleEdit}>
+                            {dValue}:
+                        </p>
+                        <textarea onInput={(evt) => updateOptions(evt)} defaultValue={composedOptions()}></textarea>
+                    </>
+                ) : (
+                    <p onClick={toggleEdit}>
+                        {`${dValue}: `}{`[ ${composedOptions(true)} ]`}
+                    </p>
+                )
+            }
         </div>
     )
 }
@@ -71,26 +77,43 @@ const AddBlock = (props: { addBlock: (arg0: string) => void; }):JSX.Element => {
         showInput(false)
         props.addBlock(inputValue)
     }
-    const input = <input className='add-block_input' placeholder='Шаг в процентах (0.01-99.99)' type="text" onKeyDown={add} onInput={updateInputValue} value={inputValue}/>
-    const button = <button className='add-block' onClick={() => showInput(true)}>+</button>
     return (
-        isInputShow ? input : button
+        isInputShow
+            ? <input className='add-block_input'
+                     placeholder='Шаг в процентах (0.01-99.99)'
+                     type="text"
+                     onKeyDown={add}
+                     onInput={updateInputValue}
+                     value={inputValue}/>
+            : <button className='add-block'
+                      onClick={() => showInput(true)}>+</button>
     )
 }
 
 const Blocks = (props: { addButton: boolean }):JSX.Element => {
-    const list = [0, 100]
-    const [blocks, updateBlocks] = useState(list)
+    const list = {
+        0: {},
+        100: {}
+    }
+    const [blocks, updateBlocks]:[{[index: string]:any}, Dispatch<any>] = useState(list)
     const handleUpdateBlocks = (block: number|string) => {
-        if (isNaN(+block) || blocks.indexOf(+block) >= 0) {
+        if (isNaN(+block) || blocks[block]) {
             return
         }
         block = +((+block).toFixed(2))
-        const newBlocks = [...blocks, block].sort((a,b) => a-b)
+        const newBlocks = Object.assign({}, blocks)
+        newBlocks[block] = {}
         updateBlocks(newBlocks)
+        storage.changeProperty('fromTo', newBlocks)
     }
-    const distanceBlocks = blocks.map((block, i) => {
-        return <DistanceBlock dValue={+block} key={i}/>
+    const changeOptions = (options:object, dValue:string|number) => {
+        const newBlocks = Object.assign({}, blocks)
+        newBlocks[dValue] = options
+        updateBlocks(newBlocks)
+        storage.changeProperty('fromTo', newBlocks)
+    }
+    const distanceBlocks = Object.keys(blocks).map((block, i) => {
+        return <DistanceBlock dValue={+block} key={i} changeOptions={changeOptions}/>
     })
     return (
         <div className='blocks'>
@@ -103,13 +126,13 @@ interface noticeData {
     toggleFunc: () => void,
     state: boolean
 }
-interface btns {
+interface actions {
     mode: string,
     setMode: React.Dispatch<string>,
     noticeData: noticeData
 }
 
-const Actions = (props:btns):JSX.Element => {
+const Actions = (props:actions):JSX.Element => {
     return (
         <div className="actions">
             {

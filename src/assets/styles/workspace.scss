@@ -1,0 +1,44 @@
+.workspace {
+  position: relative;
+  background: var(--grey);
+  flex-grow: 1;
+  & .actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    background: var(--grey3);
+    & .action {
+      width: 100%;
+      padding: 6px 4px;
+      background: var(--white);
+    }
+  }
+  & .scene-menu {
+    position: absolute;
+    right: 0;
+    transform: translateX(-100%);
+    display: flex;
+    flex-flow: column;
+    gap: 6px;
+    padding: 6px 2px;
+    min-width: 100px;
+    list-style: none;
+    background: var(--white);
+    &_item {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+      & .status {
+        width: 16px;
+        height: 16px;
+        background-color: red;
+      }
+    }
+  }
+}
