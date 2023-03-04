@@ -1,17 +1,15 @@
-import React, {useState, Dispatch} from "react";
+import React, {useState, Dispatch, useMemo} from "react";
 import storage from "../../main/storage";
-import '../../assets/styles/workspace.css'
 import {subscribe} from "valtio";
 import {subscribeKey} from "valtio/utils";
-import {useSnapshot} from "valtio/react";
+import '../../styles/components/workspace.css'
+import {AddBtn} from "../UI/addBtn";
+import {StringToJSX} from "../../lib/stringToJSX";
 
 const ActionBtn = ({ text, onClick }:{text: string, onClick?: () => void}) => {
     return (
         <button className='action' onClick={onClick}>{text}</button>
     )
-}
-const AddBtn = () => {
-    //
 }
 
 const scene = () => {
@@ -35,6 +33,7 @@ const scene = () => {
                             </li>
                         )
                     })}
+                    <AddBtn onClick={storage.addScene.bind(storage)}/>
                 </ol>
             }
         </>
@@ -60,25 +59,31 @@ const Actions = () => {
         </div>
     )
 }
-
-const workspace = () => {
-    const sstorage = useSnapshot(storage)
-    const closureInit:JSX.Element = storage.composeClosure()
+const Closure = () => {
+    const composeClosure = ():JSX.Element => {
+        const scene: Record<string, any> = storage.getScene()
+        const closure = {...scene._closure}
+        const childWithClassLabel = closure.child.replace(/<\w*/, (x:string) => `${x} className="__child"`)
+        const fullString = closure.parent.replace('[child]', childWithClassLabel)
+        return fullString ? StringToJSX({domString: fullString}) : ''
+    }
+    const closureInit:JSX.Element = useMemo(() => composeClosure(), [])
     const [closure, setClosure]:[JSX.Element, Dispatch<JSX.Element>] = useState(closureInit)
     const scene = storage.getScene()
-
     subscribeKey(scene, '_closure', () => {
-        console.log('sub triggerred');
-        setClosure(storage.composeClosure())
+        setClosure(composeClosure())
     })
+    return (
+        <div className="closure">
+            {closure}
+        </div>
+    )
+}
+function workspace () {
     return (
         <div className='workspace'>
             <Actions />
-            <div className="closure">
-                {/* todo вставить closure из storage */}
-                {sstorage._scenes[sstorage._sceneNum]._name}
-                {closure}
-            </div>
+            <Closure />
         </div>
     )
 }

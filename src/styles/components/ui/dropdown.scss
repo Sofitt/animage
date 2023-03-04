@@ -1,0 +1,26 @@
+.dropdown {
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+  & .header {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    min-width: 100px;
+    gap: 6px;
+    user-select: none;
+    & .icon {
+      position: relative;
+      height: 16px;
+      &.active {
+        rotate: 180deg;
+      }
+    }
+  }
+  & section {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 120px;
+  }
+}

@@ -1,0 +1,14 @@
+.add-btn {
+  color: var(--black);
+  background: var(--blue);
+  border-radius: 8px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  animation-play-state: paused;
+}
+
+/*# sourceMappingURL=addBtn.css.map */

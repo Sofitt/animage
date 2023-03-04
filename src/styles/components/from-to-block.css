@@ -36,6 +36,7 @@
   background: var(--grey2);
 }
 .from-to-block .notice-block {
+  z-index: 1;
   position: absolute;
   left: 100%;
   top: 0;
@@ -72,18 +73,7 @@
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
   color: var(--green);
 }
-.from-to-block .blocks .add-block {
-  color: var(--black);
-  background: var(--blue);
-  border-radius: 8px;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-}
-.from-to-block .blocks .add-block_input {
+.from-to-block .blocks .add-btn_input {
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
 }
 

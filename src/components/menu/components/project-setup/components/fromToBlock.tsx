@@ -1,8 +1,9 @@
-import React, {Dispatch, useState} from "react";
+import React, {Dispatch, useEffect, useState} from "react";
 import {styleParser} from "../../../../../lib/styleParser";
 import {numberMask} from "../../../../../lib/numberMask";
-import '../../../../../assets/styles/from-to-block.css'
 import storage from "../../../../../main/storage";
+import '../../../../../styles/components/from-to-block.css'
+import {AddBtn} from "../../../../UI/addBtn";
 
 interface mode {
     mode: string
@@ -79,23 +80,29 @@ const AddBlock = (props: { addBlock: (arg0: string) => void; }):JSX.Element => {
     }
     return (
         isInputShow
-            ? <input className='add-block_input'
+            ? <input className='add-btn_input'
                      placeholder='Шаг в процентах (0.01-99.99)'
                      type="text"
                      onKeyDown={add}
                      onInput={updateInputValue}
                      value={inputValue}/>
-            : <button className='add-block'
-                      onClick={() => showInput(true)}>+</button>
+            :
+            <AddBtn onClick={() => showInput(true)}/>
     )
 }
 
-const Blocks = (props: { addButton: boolean }):JSX.Element => {
+const Blocks = (props: { moreSteps: boolean }):JSX.Element => {
     const list = {
         0: {},
         100: {}
     }
     const [blocks, updateBlocks]:[{[index: string]:any}, Dispatch<any>] = useState(list)
+    useEffect(() => {
+        // fixme если значения уже заполнены для list, то при переключении режима и добавлении нового пункта ломается отображение
+        if (!props.moreSteps) {
+            updateBlocks(list)
+        }
+    }, [props.moreSteps])
     const handleUpdateBlocks = (block: number|string) => {
         if (isNaN(+block) || blocks[block]) {
             return
@@ -112,13 +119,14 @@ const Blocks = (props: { addButton: boolean }):JSX.Element => {
         updateBlocks(newBlocks)
         storage.changeProperty('fromTo', newBlocks)
     }
-    const distanceBlocks = Object.keys(blocks).map((block, i) => {
-        return <DistanceBlock dValue={+block} key={i} changeOptions={changeOptions}/>
-    })
     return (
         <div className='blocks'>
-            {distanceBlocks}
-            {props.addButton && <AddBlock addBlock={handleUpdateBlocks}/>}
+            {
+                Object.keys(blocks).map((block, i) => {
+                    return <DistanceBlock dValue={+block} key={i} changeOptions={changeOptions}/>
+                })
+            }
+            {props.moreSteps && <AddBlock addBlock={handleUpdateBlocks}/>}
         </div>
     )
 }
@@ -180,7 +188,7 @@ const fromToBlock = () => {
                          noticeData={{toggleFunc: toggleNotice, state: notice}}/>
             </div>
             {notice && <NoticeBlock/>}
-            <Blocks addButton={mode === 'value'}/>
+            <Blocks moreSteps={mode === 'value'}/>
         </div>
     )
 }

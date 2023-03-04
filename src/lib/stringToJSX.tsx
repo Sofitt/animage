@@ -25,14 +25,20 @@ const createJSX = (nodeArray) => {
 					const styleAttributes = attribute.nodeValue.split(";");
 					const styleObj = {};
 					styleAttributes.forEach(attribute => {
-						const [key, value] = attribute.split(":");
-						styleObj[key] = value;
+						if ( attribute && !/\d:?/.test(attribute) ) {
+							const [key, value] = attribute.trim().split(":");
+							const camelCaseKey = key.replace(/-\w/, x=>x[1].toUpperCase()) // fixme сбилась поддержка
+							styleObj[camelCaseKey] = value;
+						}
 					});
 					attributeObj[attribute.name] = styleObj;
+				} else if (attribute.name === 'classname') {
+					attributeObj.className = attribute.nodeValue;
 				} else {
 					attributeObj[attribute.name] = attribute.nodeValue;
 				}
 			});
+			// console.log('attribute', attributeObj);
 		}
 		return localName ?
 			React.createElement(

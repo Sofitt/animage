@@ -1,0 +1,10 @@
+.closure-setup .notice {
+  line-height: 1.3;
+}
+.closure-setup samp {
+  background-color: var(--grey3);
+  color: var(--white);
+  padding: 4px;
+}
+
+/*# sourceMappingURL=closure-setup.css.map */

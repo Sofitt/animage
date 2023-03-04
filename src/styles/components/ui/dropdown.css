@@ -1,0 +1,28 @@
+.dropdown {
+  cursor: pointer;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+.dropdown .header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  min-width: 100px;
+  gap: 6px;
+  user-select: none;
+}
+.dropdown .header .icon {
+  position: relative;
+  height: 16px;
+}
+.dropdown .header .icon.active {
+  rotate: 180deg;
+}
+.dropdown section {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 120px;
+}
+
+/*# sourceMappingURL=dropdown.css.map */

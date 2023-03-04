@@ -4,24 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="622d61e3-1a94-403c-b4d5-c76161d648ae" name="Changes" comment="Исправил маску шага&#10;Добавил стили для menu.tsx">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/workspace.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/workspace.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/workspace.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/workspace/workspace.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/stringToJSX.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/storage.tsx" afterDir="false" />
+    <list default="true" id="622d61e3-1a94-403c-b4d5-c76161d648ae" name="Changes" comment="Добавил хранилище настроек.&#10;Добавил сохранение настроек сцены.&#10;Добавил редактор html кода для редактирования окружения.&#10;Добавил вывод окружения в рабочую среду.&#10;Добавил меню сцен">
+      <change afterPath="$PROJECT_DIR$/src/components/UI/addBtn.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/dropdown.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/menu/components/exportAnim.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/ui/addBtn.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/ui/addBtn.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/ui/addBtn.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/ui/dropdown.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/ui/dropdown.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/components/ui/dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/closure-setup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/closure-setup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/closure-setup.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/closure-setup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/closure-setup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/from-to-block.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/from-to-block.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/from-to-block.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/from-to-block.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/from-to-block.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/from-to-block.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/menu.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/menu.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/menu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/project-setup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/project-setup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/project-setup.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/project-setup.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/project-setup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/project-setup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/workspace.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/workspace.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/workspace.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/workspace.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/workspace.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/components/workspace.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/inputLabel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/inputLabel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/components/closure-setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/closure-setup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/components/project-setup/components/fromToBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/project-setup/components/fromToBlock.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/components/project-setup/project-setup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/components/project-setup/project-setup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/workspace/workspace.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/workspace/workspace.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/stringToJSX.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/stringToJSX.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/colors.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/colors.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/fonts.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/fonts.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/null.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/null.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/null.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/null.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/null.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/null.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/storage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/storage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/typography.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/typography.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/typography.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/typography.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +64,8 @@
       <list>
         <option value="CSS File" />
         <option value="TypeScript File" />
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -60,6 +91,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.last.introduce.type&quot;: &quot;CONST&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects/My/animage/src&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -71,11 +104,20 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\My\animage\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\My\animage\src\styles" />
+      <recent name="C:\Projects\My\animage\src" />
+      <recent name="C:\Projects\My\animage\src\assets\styles\components" />
       <recent name="C:\Projects\My\animage\src\main" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="localhost:3000" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -88,6 +130,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.localhost:3000" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -101,7 +144,11 @@
       <option name="presentableId" value="Default" />
       <updated>1677368292094</updated>
       <workItem from="1677368295135" duration="25353000" />
-      <workItem from="1677528155852" duration="19118000" />
+      <workItem from="1677528155852" duration="28992000" />
+      <workItem from="1677741046173" duration="1051000" />
+      <workItem from="1677809307624" duration="7698000" />
+      <workItem from="1677821576396" duration="3696000" />
+      <workItem from="1677888961566" duration="4640000" />
     </task>
     <task id="LOCAL-00001" summary="Добавил настройку окружения">
       <created>1677396495840</created>
@@ -124,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677398590753</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Добавил хранилище настроек.&#10;Добавил сохранение настроек сцены.&#10;Добавил редактор html кода для редактирования окружения.&#10;Добавил вывод окружения в рабочую среду.&#10;Добавил меню сцен">
+      <created>1677626141810</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677626141810</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +189,24 @@
     <MESSAGE value="Добавил настройку окружения" />
     <MESSAGE value="Добавил шрифты.&#10;Написал стили для компонентов: projectSetup и closureSetup" />
     <MESSAGE value="Исправил маску шага&#10;Добавил стили для menu.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправил маску шага&#10;Добавил стили для menu.tsx" />
+    <MESSAGE value="Добавил хранилище настроек.&#10;Добавил сохранение настроек сцены.&#10;Добавил редактор html кода для редактирования окружения.&#10;Добавил вывод окружения в рабочую среду.&#10;Добавил меню сцен" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил хранилище настроек.&#10;Добавил сохранение настроек сцены.&#10;Добавил редактор html кода для редактирования окружения.&#10;Добавил вывод окружения в рабочую среду.&#10;Добавил меню сцен" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/lib/stringToJSX.tsx</url>
+          <line>23</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/lib/stringToJSX.tsx</url>
+          <line>28</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import '../styles/index.css';
 import Menu from "../components/menu/menu";
 import Workspace from "../components/workspace/workspace";
 

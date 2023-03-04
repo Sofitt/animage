@@ -1,50 +1,72 @@
-import '../../../../assets/styles/project-setup.css'
+import '../../../..//styles/components/project-setup.css'
 import InputLabel from "../../../UI/inputLabel";
 import FromToBlock from "./components/fromToBlock"
-import React, {useEffect, useState} from "react";
+import {Dropdown} from "../../../UI/dropdown";
+import React, {Dispatch, useEffect, useState} from "react";
 import storage from "../../../../main/storage";
 
 interface inputModel {
     title: string,
     inputName: string
 }
+interface inputs extends Record<string, any>{
+    name: string,
+    cubic: string,
+    delay: string,
+    duration: string,
+    direction: string,
+    'fill-mode': string,
+    'it-count': string
+}
 interface inputData {
     name: string,
     value: string
 }
-interface inputs {
-    name: string,
-    cubic: string
-}
 
 const inputsModel:Array<inputModel> = [
-    {title: 'Название', inputName: 'name'},
-    {title: 'Cubic-bezier', inputName: 'cubic'}
+    {title: 'Cubic-bezier', inputName: 'cubic'},
+    {title: 'Delay', inputName: 'delay'},
+    {title: 'Duration', inputName: 'duration'},
+    {title: 'Direction', inputName: 'direction'},
+    {title: 'Fill-mode', inputName: 'fill-mode'},
+    {title: 'It-count', inputName: 'it-count'}
 ]
 const inputs:inputs = {
     name: '',
-    cubic: ''
+    cubic: '',
+    delay: '',
+    duration: '',
+    direction: '',
+    'fill-mode': '',
+    'it-count': ''
 }
 export default function projectSetup () {
-    const [value, setValue] = useState(inputs)
+    const [inputValues, setValue]:[inputs, Dispatch<inputs>] = useState(inputs)
     const modifyValue = (obj:inputData) => {
-        const tempValue = Object.assign(value, {[obj.name]: obj.value})
-        setValue(tempValue)
-        // todo здесь нужна подписка на изменение value. Не понял пока как
-        storage.changeProperty('cubic', value.cubic)
-        storage.changeProperty('name', value.name)
+        setValue({...inputValues, [obj.name]: obj.value})
     }
+    useEffect(() => {
+        for (const key in inputValues) {
+            storage.changeSettings(key, inputValues[key])
+        }
+    }, [inputValues])
     return (
         <fieldset className='project-setup settings-block'>
             <legend>Настройка проекта</legend>
-            {
+            <InputLabel title='Название'
+                        name='name'
+                        value={inputValues.name}
+                        handleInput={modifyValue}/>
+            <Dropdown title='Animation-settings' content={
                 inputsModel.map((data, i) => {
+                    const value = inputValues[data.inputName]
                     return <InputLabel title={data.title}
                                        key={i}
                                        name={data.inputName}
+                                       value={value}
                                        handleInput={modifyValue}/>
                 })
-            }
+            }/>
             <FromToBlock />
         </fieldset>
     )

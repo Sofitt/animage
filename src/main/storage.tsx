@@ -1,14 +1,21 @@
 import {proxy} from "valtio";
-import {devtools, watch} from "valtio/utils";
-import {StringToJSX} from '../lib/stringToJSX'
+import {devtools} from "valtio/utils";
 
+interface settings {
+    _cubic: string,
+    _delay: string,
+    _duration: string,
+    _direction: string,
+    '_fill-mode': string,
+    '_it-count': string
+}
 interface closure {
     parent: string,
     child: string
 }
 interface scene {
     _name: string,
-    _cubic: string,
+    _settings: settings,
     _fromTo: { [key: string]: object },
     _closure: closure
 }
@@ -17,28 +24,38 @@ interface state {
     _scenes: { [key: string]: scene },
     getScene: ()=>scene,
     getSceneNum: ()=>number|string,
-    getSceneList: ()=>Array<string>,
+    getSceneList: ()=>Array<string|any>,
+    getSettings: ()=>settings,
     setScene: (scene:number|string)=>void,
+    addScene: ()=>void,
     removeScene: (scene:number|string)=>void,
-    changeProperty: (property: string, value: any)=>void,
-    composeClosure: () => JSX.Element
-    getClosure: () => JSX.Element
+    changeProperty: (property: string, value: any, isSettings?: boolean)=>void
+    changeSettings: (property: string, value: any)=>void
+}
+
+const sceneTemplate:scene = {
+    _name: '', // Название
+    _settings: {
+        _cubic: '',
+        _delay: '',
+        _duration: '',
+        _direction: '',
+        '_fill-mode': '',
+        '_it-count': ''
+    },
+    _fromTo: {
+        0: {}, 100: {}
+    },
+    _closure: {
+        parent: '<div>[child]</div>',
+        child: '<div></div>'
+    }
 }
 
 const initial:state = {
     _sceneNum: 0,
     _scenes: {
-        0: {
-            _name: '', // Название
-            _cubic: '',
-            _fromTo: {
-                0: {}, 100: {}
-            },
-            _closure: {
-                parent: '<div>[child]</div>',
-                child: '<div></div>'
-            }
-        }
+        0: sceneTemplate
     },
     getScene: function () {
         return this._scenes[this._sceneNum as string]
@@ -49,30 +66,40 @@ const initial:state = {
     getSceneList: function () {
         return Object.keys(this._scenes)
     },
+    getSettings: function () {
+        return this.getScene()._settings
+    },
     setScene: function (scene) {
         this._sceneNum = scene
+    },
+    addScene: function () {
+        console.log(this);
+        const scenesList = this.getSceneList()
+        let sceneId
+        if (!scenesList.length) {
+            sceneId = 0
+        } else {
+            sceneId = +scenesList.at(-1) + 1
+        }
+        this._scenes[sceneId] = sceneTemplate
     },
     removeScene: function (scene) {
         delete this._scenes[scene]
     },
-    changeProperty: function (property, value) {
+    changeProperty: function (property, value, isSettings = false) {
         const key = `_${property}`
-        const scene: {[index: string]:any} = this.getScene()
+        const scene: Record<string, any> = this.getScene()
         if (!scene) {
             console.log('Сцена не найдена')
             // todo запилить уведомления
             return
         }
-        scene[key] = value
+        isSettings
+            ? scene._settings[key] = value
+            : scene[key] = value
     },
-    composeClosure: function () {
-        const scene: {[index: string]:any} = this.getScene()
-        const closure = {...scene._closure}
-        const fullString = closure.parent.replace('[child]', closure.child)
-        return fullString ? StringToJSX({domString: fullString}) : ''
-    },
-    getClosure: function () {
-        return this.composeClosure()
+    changeSettings: function (property, value) {
+        this.changeProperty(property, value, true)
     }
 }
 
@@ -80,8 +107,5 @@ const state = proxy(
     initial
 )
 
-watch(get => {
-    console.log('22', get(state._scenes[state._sceneNum]));
-})
 devtools(state, { name: 'state', enabled: true })
 export default state

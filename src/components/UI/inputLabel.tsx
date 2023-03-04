@@ -1,4 +1,4 @@
-import React, {SyntheticEvent, useState} from "react";
+import React, {SyntheticEvent} from "react";
 
 interface input {
     name: string,
@@ -7,15 +7,16 @@ interface input {
 interface model {
     title: string,
     name: string,
+    value: string,
     handleInput: (data:input) => void
 }
 
 export default function inputLabel (props:model) {
-    const [value, setValue] = useState('') // для cubic-bezier это надо, чтобы маску накладывать на данные.
-    // Но есть ли в реакте слоты...
     const handleChange = (evt:SyntheticEvent) => {
         const value = (evt.target as HTMLInputElement).value
-        setValue(value)
+        console.log(value.match(
+            /(-?\d?\.?[0-9]*)/g
+        ));
         props.handleInput({name: props.name, value})
     }
     return (
@@ -23,7 +24,7 @@ export default function inputLabel (props:model) {
             <h3 className="title">
                 {props.title}
             </h3>
-            <input type="text" onInput={handleChange}/>
+            <input type="text" onInput={handleChange} value={props.value}/>
         </label>
     )
 }
